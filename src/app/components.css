@@ -11,12 +11,13 @@
         display: flex;
         gap: 5px;
         align-items: center;
+
         >button {
             height: max-content;
             display: flex;
             gap: 5px;
         }
-    } 
+    }
 }
 
 .lesson-container-component {
@@ -32,15 +33,48 @@
     align-items: center;
     margin-bottom: 25px;
     justify-content: space-between;
-    > div {
+
+    >div {
         display: flex;
         gap: 10px;
     }
 }
 
-.lesson-content-component {
-    
-    /* line-height: 1.6rem; */
+.exercise-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 70px;
+}
+
+.exercise-card {
+    background-color: var(--color-blue-opaque);
+    display: flex;
+    padding: 15px;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.8;
+
+    >div {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+.exercise-card:hover {
+    /* scale: 1.01; */
+    opacity: 1;
+}
+
+.footer {
+    background-color: var(--bg-color-gray);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .sidebar-component {
@@ -50,27 +84,31 @@
     left: 101%;
     background-color: #FAFAFB;
 }
+
 .sidebar-appear {
     animation: appear-4-right 0.5s ease 1 forwards;
 }
+
 .sidebar-disappear {
     animation: disappear-4-right 0.4s ease 1 forwards;
 }
 
 @keyframes appear-4-right {
-    0%{
+    0% {
         left: 101%;
     }
-    100%{
+
+    100% {
         left: 0px;
     }
 }
 
 @keyframes disappear-4-right {
-    0%{
+    0% {
         left: 0px;
     }
-    100%{
+
+    100% {
         left: 101%;
     }
 }

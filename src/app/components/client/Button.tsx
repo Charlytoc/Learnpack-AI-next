@@ -1,11 +1,12 @@
 interface ButtonProps {
-    text: string;
+    text?: string;
     svg: any;
-    action: () => void;
+    extraClass?: string;
+    action?: () => void;
 }
 
-export default function SimpleButton({text, action, svg}: ButtonProps) {
-    return <button className="simple-button-svg" onClick={action}>
+export default function SimpleButton({text, action, svg, extraClass}: ButtonProps) {
+    return <button className={`simple-button-svg ${extraClass}`} onClick={action}>
         {text}
         {svg}
     </button>

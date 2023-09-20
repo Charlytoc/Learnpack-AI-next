@@ -1,5 +1,6 @@
 "use client"
 import { svgs } from "@/app/resources/svgs"
+import { Toaster } from "react-hot-toast"
 import LessonContent from "../client/LessonContent"
 import useStore from "@/app/utils/store"
 
@@ -34,6 +35,7 @@ export default function LessonContainer () {
   
     return (
     <div className="lesson-container-component">
+        <Toaster/>
         <LessonOptions />
         <LessonContent />
     </div>
