@@ -2,47 +2,60 @@
 // This store is created with Zustand
 
 import { create } from 'zustand';
-import { convertMarkdownToHTML } from './lib';
+import { convertMarkdownToHTML, changeSidebarVisibility } from './lib';
 const HOST = "http://localhost:3000";
 
 interface IStore {
-  numberOfStudents: number;
   fetchExercises: () => void;
   exercises: any[];
   currentContent: string;
+  currentExercisePosition: number;
   language: string;
-  fetchReadme: (slug:string) => void;
+  setPosition: (position: number) => void;
+  fetchReadme: () => void;
+  toggleSidebar: () => void;
+  toggleLanguage: () => void;
 }
 
 
 const useStore = create<IStore>((set, get) => ({
-  numberOfStudents: 3,
   fetchExercises: async () => {
     const {fetchReadme} = get();
     const res = await fetch(`${HOST}/exercise`)
     const files = await res.json();
     // console.log(files);
     set({exercises: files});
-    fetchReadme(files[0].slug);
+    fetchReadme();
     
   },
-  language: 'en',
-  fetchReadme: async (slug) => {
+  language: 'us',
+  setPosition: (newPosition:number) => {
+    set({currentExercisePosition: newPosition});
+  },
+  fetchReadme: async () => {
     
-    const {language} = get();
-    
+    const {language, exercises, currentExercisePosition} = get();
+    const slug = exercises[currentExercisePosition].slug;
+
     const response = await fetch(`${HOST}/exercise/${slug}/readme?lang=${language}`);
-    // console.log(response);
-    
+
     const exercise = await response.json();
 
     set({currentContent: convertMarkdownToHTML(exercise.body)})
 
   },
+  toggleSidebar: () => {
+    changeSidebarVisibility()
+  },
+  toggleLanguage:()=>{
+    const {language, fetchReadme} = get();
+    const newLang = language === 'us'?'es':'us';
+    set({language:newLang});
+    fetchReadme();
+  },
   exercises: [],
   currentContent: "",
-
-
+  currentExercisePosition: 0,
 })
 
 );

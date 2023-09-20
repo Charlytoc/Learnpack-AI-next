@@ -32,6 +32,47 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 25px;
+  font-weight: 700;
+}
+hr {
+  margin-top: 15px;
+}
+
+pre {
+  background-color: #323232;
+  padding: 10px;
+  border-left: 2px solid var(--color-active) ;
+  border-radius: 5px;
+  overflow: auto;
+}
+code {
+  color: white;
+  background-color: #323232;
+  word-break: break-all;
+}
+code:not(pre code) {
+  border-left: 2px solid var(--color-active) ;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+/* This will affect the entire webpage */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.433); /* Change the color and transparency as needed */
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
 .pill {
   border-radius: 7px;
   padding: 5px 9px;

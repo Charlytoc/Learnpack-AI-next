@@ -5,7 +5,7 @@ export default function ExercisesList() {
     const {exercises} = useStore();
     return (
         <ul>
-            {exercises.map((item, index) => <ExerciseContainer key={index} name={item.title} isDone={item.isDone} />)}
+            {exercises.map((item, index) => <ExerciseContainer key={index} name={item.title} position={item.position} isDone={item.isDone} />)}
         </ul>
 
     )
@@ -14,14 +14,20 @@ export default function ExercisesList() {
 interface IExerciseProps {
     name: string;
     isDone: boolean;
+    position: number;
 }
 
-function ExerciseContainer({name, isDone}: IExerciseProps) {
+function ExerciseContainer({name, isDone, position}: IExerciseProps) {
+    const {setPosition, fetchReadme, toggleSidebar} = useStore();
     return (
-        <li>
+        <li onClick={
+            () => {
+                setPosition(position);
+                fetchReadme();
+                toggleSidebar();
+            }
+        }>
             {name}
-            {/* {isDone ? "Done" : "Not done"} */}
-            {/* <input type="checkbox" checked readOnly/> */}
         </li>
     )
 }

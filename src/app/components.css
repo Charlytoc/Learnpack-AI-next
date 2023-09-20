@@ -24,12 +24,13 @@
     max-width: 1145px;
     margin: 0 auto;
     min-height: 90vh;
-    padding: 10px;
+    padding: 15px;
 }
 
 .lesson-options-component {
     display: flex;
     align-items: center;
+    margin-bottom: 25px;
     justify-content: space-between;
     > div {
         display: flex;
@@ -37,6 +38,10 @@
     }
 }
 
+.lesson-content-component {
+    
+    /* line-height: 1.6rem; */
+}
 
 .sidebar-component {
     width: 100vw;
