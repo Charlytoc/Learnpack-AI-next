@@ -1,0 +1,66 @@
+.navbar-component {
+    padding: 10px;
+    background-color: var(--bg-color-gray);
+    display: flex;
+    gap: 5px;
+    margin: 0 auto;
+    max-width: 1145px;
+    justify-content: space-between;
+
+    >section {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        >button {
+            height: max-content;
+            display: flex;
+            gap: 5px;
+        }
+    } 
+}
+
+.lesson-container-component {
+    background-color: white;
+    max-width: 1145px;
+    margin: 0 auto;
+    min-height: 90vh;
+    padding: 10px;
+}
+
+.lesson-options-component {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.sidebar-component {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 101%;
+    background-color: #FAFAFB;
+}
+.sidebar-appear {
+    animation: appear-4-right 0.5s ease 1 forwards;
+}
+.sidebar-disappear {
+    animation: disappear-4-right 0.4s ease 1 forwards;
+}
+
+@keyframes appear-4-right {
+    0%{
+        left: 101%;
+    }
+    100%{
+        left: 0px;
+    }
+}
+
+@keyframes disappear-4-right {
+    0%{
+        left: 0px;
+    }
+    100%{
+        left: 101%;
+    }
+}
