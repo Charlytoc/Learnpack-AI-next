@@ -28,22 +28,13 @@ html {
 }
 body {
   background-color: #EFF1F4;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
 }
-
-
-
 
 .pill {
   border-radius: 7px;
-  padding: 3px 9px;
+  padding: 5px 9px;
   display: flex;
   align-items: center;
 }
@@ -58,4 +49,9 @@ body {
 }
 .color-blue {
   color: var(--color-active);
+}
+
+
+.scrolleable {
+  overflow-y: scroll !important;
 }

@@ -1,12 +1,11 @@
 "use client"
-import { exercises } from "@/app/resources/testObjects";
+import useStore from "@/app/utils/store";
 
-export default function ExercisesList() {
-    console.log("HELLO>");
-    
+export default function ExercisesList() {    
+    const {exercises} = useStore();
     return (
         <ul>
-            {exercises.map((item, index) => <ExerciseContainer name={item.name} isDone={item.isDone} />)}
+            {exercises.map((item, index) => <ExerciseContainer key={index} name={item.title} isDone={item.isDone} />)}
         </ul>
 
     )
@@ -21,8 +20,8 @@ function ExerciseContainer({name, isDone}: IExerciseProps) {
     return (
         <li>
             {name}
-            {isDone ? "Done" : "Not done"}
-            <input type="checkbox" checked />
+            {/* {isDone ? "Done" : "Not done"} */}
+            {/* <input type="checkbox" checked readOnly/> */}
         </li>
     )
 }

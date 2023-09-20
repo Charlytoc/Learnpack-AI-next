@@ -6,7 +6,7 @@ import { svgs } from "@/app/resources/svgs";
 
 export default function Sidebar() {
 
-    return <div className="sidebar-component">
+    return <div className="sidebar-component scrolleable">
         <section className="p-4 flex justify-end">
         <ToggleSidebarButton svg={svgs.closeIcon} />
         </section>
@@ -16,7 +16,7 @@ export default function Sidebar() {
             <SimpleButton text="" svg={svgs.videoIcon} action={()=>{}}/>
             <SimpleButton text="" svg={svgs.bulbIcon} action={()=>{}}/>
         </section>
-        <section className="p-4">
+        <section className="p-4 ">
             <ExercisesList />
         </section>
         <section className="p-4">

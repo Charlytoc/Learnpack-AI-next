@@ -1,5 +1,5 @@
 .navbar-component {
-    padding: 10px;
+    padding: 10px 20px;
     background-color: var(--bg-color-gray);
     display: flex;
     gap: 5px;
@@ -29,7 +29,12 @@
 
 .lesson-options-component {
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    > div {
+        display: flex;
+        gap: 10px;
+    }
 }
 
 
