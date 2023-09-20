@@ -32,7 +32,7 @@ html {
 body {
   background-color: #EFF1F4;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {

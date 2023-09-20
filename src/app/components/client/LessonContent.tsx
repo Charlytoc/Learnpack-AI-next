@@ -7,9 +7,9 @@ export default function LessonContent () {
     useEffect(()=>{
         fetchExercises()
     },[])
-    
+
     return <>
-    <div className="lesson-content-component" dangerouslySetInnerHTML={{__html:currentContent}}>
+    <div className="lesson-content-component " dangerouslySetInnerHTML={{__html:currentContent}}>
     </div>
     </>
 }

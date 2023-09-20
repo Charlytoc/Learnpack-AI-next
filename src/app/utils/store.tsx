@@ -31,6 +31,7 @@ const useStore = create<IStore>((set, get) => ({
   currentExercisePosition: 0,
   lessonTitle: "",
   numberOfExercises: 0,
+  
   // functions
   fetchExercises: async () => {
     const { fetchReadme, getLessonTitle } = get();

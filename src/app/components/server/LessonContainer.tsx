@@ -34,7 +34,7 @@ function LessonOptions () {
 export default function LessonContainer () {
   
     return (
-    <div className="lesson-container-component">
+    <div className="lesson-container-component scrolleable">
         <Toaster/>
         <LessonOptions />
         <LessonContent />

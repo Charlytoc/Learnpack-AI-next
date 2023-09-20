@@ -10,7 +10,9 @@ export const convertMarkdownToHTML = (markdown:any) => {
     // Create a new instance of the Remarkable markdown parser
     const md = new Remarkable();
     // Convert the markdown to HTML using the Remarkable parser
-    const html = md.render(markdown);
+    let html = md.render(markdown);
+    html = replaceSrc(html);
+    console.log(html);
     return html;
 }
 
@@ -35,4 +37,20 @@ export const changeSidebarVisibility = () => {
             // Force a reflow, triggering the animation
             void sidebar?.offsetWidth;
     }
+}
+
+
+/**
+  * Replaces occurrences of src="../.." with http://localhost:3000 in the given HTML-like text.
+  *
+  * @param {string} rawText - The input text in HTML-like format.
+  * @returns {string} - The modified text with replaced occurrences.
+  */
+function replaceSrc(rawText:string) {
+    // Use a regular expression to find all occurrences of src="../.."
+    const regex = /src="\.\.\/\.\./g;
+    // Replace all occurrences with http://localhost:3000
+    const modifiedText = rawText.replace(regex, 'src="http://localhost:3000');
+    // Return the modified text
+    return modifiedText;
 }
